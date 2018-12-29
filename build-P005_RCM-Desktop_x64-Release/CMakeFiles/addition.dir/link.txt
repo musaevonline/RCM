@@ -1,0 +1,2 @@
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe qc libaddition.a  CMakeFiles/addition.dir/listener.cpp.obj CMakeFiles/addition.dir/performer.cpp.obj CMakeFiles/addition.dir/sender.cpp.obj CMakeFiles/addition.dir/initialization.cpp.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ranlib.exe libaddition.a
