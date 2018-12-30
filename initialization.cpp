@@ -16,6 +16,7 @@ sockaddr_in *initPreConnection()
         printf("Error connect: %d\n", WSAGetLastError());
         Sleep(LOOP_TIME_WAIT);
     }
+
     addr_a = inet_ntoa(*(in_addr*)s->h_addr_list[0]);
     addr.sin_addr.S_un.S_addr = inet_addr(addr_a);
     addr.sin_port = htons(80);
@@ -36,6 +37,7 @@ SOCKET *initConnection(sockaddr_in *addr)
         Sleep(RECONNECTION_TIME_WAIT);
         *sock = socket(AF_INET, SOCK_STREAM, 0);
     }
+    printf("sdf");
     //setsockopt(sock, SOL_SOCKET, SO_KEEPALIVE, "1", 1);
     printf("\nConnected\n");
 

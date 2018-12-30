@@ -39,6 +39,7 @@ char listenData(void *sock);
 
 //-----------------performer----------------//
 int execCommand(char *command);
+char *readConsoleOutput(HANDLE hReadPipe);
 char *readFromFile(char *fileName);
 void writeToFile(char *fileName, char *str);
 void closeHandles(HANDLE a1, HANDLE a2, HANDLE a3, HANDLE a4);
@@ -47,7 +48,6 @@ void closeHandles(HANDLE a1, HANDLE a2, HANDLE a3, HANDLE a4);
 
 //-----------------sender----------------//
 void sendConsoleOutput(SOCKET *sock, char * output, char *id);
-char *readConsoleOutput(HANDLE hReadPipe);
 void sendRequest(SOCKET *sock, char *id);
 //-----------------/sender----------------//
 

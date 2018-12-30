@@ -23,32 +23,6 @@ void sendConsoleOutput(SOCKET *sock, char * output, char *id)
     printf("%s\n", output);
 }
 
-char *readConsoleOutput(HANDLE hReadPipe)
-{
-    char *output = nullptr;
-    char pieceOutput[SIZE_PIECE_OUTPUT];
-    int i = 0, count = SIZE_PIECE_OUTPUT;
-    DWORD NumberRead;
-    DWORD t;
-    PeekNamedPipe(hReadPipe, nullptr, NULL, nullptr, &NumberRead, nullptr);
-    if ( NumberRead > 0 )
-    {
-        do
-        {
-            ZeroMemory(pieceOutput, SIZE_PIECE_OUTPUT);
-            while ( NumberRead-i < count )
-            {
-                count /= 2;
-            }
-            ReadFile(hReadPipe, pieceOutput, (DWORD)count, &t, nullptr);
-            //printf("%s", pieceOutput);
-            output = mySTL::addStr(output, pieceOutput);
-            i+=count;
-        }while ( i < NumberRead );
-
-    }
-    return  output;
-}
 
 
 void sendRequest(SOCKET *sock, char *id)
