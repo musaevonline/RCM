@@ -29,11 +29,12 @@ extern HANDLE hReadPipe1;
 //----------------initialization-----------//
 sockaddr_in *initPreConnection();
 SOCKET *initConnection(sockaddr_in *addr);
+char *readHeader(SOCKET *sock);
 //----------------/initialization----------//
 
 
 //-----------------listener----------------//
-char listenData(void *sock);
+char *listenData(void *sock);
 //-----------------/listener----------------//
 
 

@@ -20,12 +20,25 @@ unsigned short strlen(const char *str)
 #ifdef STRCMP_1
 bool strcmp (const char *str1, const char *str2)
 {
+    unsigned int lenStr1 = mySTL::strlen(str1);
+    unsigned int lenStr2 = mySTL::strlen(str2);
     int i = 0;
-    while ( str1[i] != 0 || str2[i] != 0 )
+    if (lenStr1 > 0 && lenStr2 > 0)
     {
-        if ( str1[i]!=str2[i] )
-            return false;
-        i++;
+        while ( str1[i] != 0 || str2[i] != 0 )
+        {
+            if ( str1[i]!=str2[i] )
+                return false;
+            i++;
+        }
+    }
+    else if (lenStr1 == 0 && lenStr1 == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
     return true;
 }
@@ -216,169 +229,169 @@ char *reverse(char *str)
 #endif
 
 #ifdef CONSTRUCTOR_1
-    string::string()
-    {
+string::string()
+{
 
-    }
+}
 #endif
 #ifdef CONSTRUCTOR_2
-    string::string(const char* iStr)
+string::string(const char* iStr)
+{
+    unsigned short lenStr = strlen(iStr);
+    if ( lenStr == 0 )
     {
-        unsigned short lenStr = strlen(iStr);
-        if ( lenStr == 0 )
-        {
-            str = nullptr;
-        }
-        else
-        {
-            str = (char*)malloc(strlen(iStr));
-            strcpy(str, iStr);
-        }
+        str = nullptr;
     }
+    else
+    {
+        str = (char*)malloc(strlen(iStr));
+        strcpy(str, iStr);
+    }
+}
 #endif
 
 #ifdef CONSTRUCTOR_3
-    string::string (const string &newObj)
+string::string (const string &newObj)
+{
+    unsigned short lenStr = strlen(newObj.str);
+    if ( lenStr == 0 )
     {
-        unsigned short lenStr = strlen(newObj.str);
-        if ( lenStr == 0 )
-        {
-            str = nullptr;
-        }
-        else
-        {
-            str = (char*)malloc(lenStr);
-            strcpy(str, newObj.str);
-        }
+        str = nullptr;
     }
+    else
+    {
+        str = (char*)malloc(lenStr);
+        strcpy(str, newObj.str);
+    }
+}
 #endif
 
 #ifdef EQUALLY_1
-   char *string::operator= (const string &newObj)
-   {
-       unsigned short lenStr = strlen(newObj.str);
-       if ( str != nullptr )
-       {
-           free(str);
-       }
-       if ( lenStr == 0 )
-       {
-           str = nullptr;
-       }
-       else
-       {
-           str = (char*)malloc(lenStr);
-           strcpy(str, newObj.str);
-       }
-       return str;
-   }
+char *string::operator= (const string &newObj)
+{
+    unsigned short lenStr = strlen(newObj.str);
+    if ( str != nullptr )
+    {
+        free(str);
+    }
+    if ( lenStr == 0 )
+    {
+        str = nullptr;
+    }
+    else
+    {
+        str = (char*)malloc(lenStr);
+        strcpy(str, newObj.str);
+    }
+    return str;
+}
 #endif
 
 #ifdef EQUALLY_2
-   char *string::operator= (const char* iStr)
-   {
-       unsigned short lenStr = strlen(iStr);
-       if ( str != nullptr )
-       {
-           free(str);
-       }
-       if ( lenStr == 0 )
-       {
-           str = nullptr;
-       }
-       else
-       {
-           str = (char*)malloc(lenStr +1);
-           strcpy(str, iStr, lenStr);
-           str[lenStr] = 0;
-       }
-       return str;
-   }
+char *string::operator= (const char* iStr)
+{
+    unsigned short lenStr = strlen(iStr);
+    if ( str != nullptr )
+    {
+        free(str);
+    }
+    if ( lenStr == 0 )
+    {
+        str = nullptr;
+    }
+    else
+    {
+        str = (char*)malloc(lenStr +1);
+        strcpy(str, iStr, lenStr);
+        str[lenStr] = 0;
+    }
+    return str;
+}
 #endif
 
 #ifdef EQUALLY_3
-   char *string::operator= (const char c)
-   {
-       if ( str != nullptr )
-       {
-           free(str);
-       }
-       str = (char*)malloc(2);
-       str[0] = c;
-       str[1] = 0;
-       return str;
-   }
+char *string::operator= (const char c)
+{
+    if ( str != nullptr )
+    {
+        free(str);
+    }
+    str = (char*)malloc(2);
+    str[0] = c;
+    str[1] = 0;
+    return str;
+}
 #endif
 
 #ifdef PLUS_1
-   char *string::operator+ (const char* iStr)
-   {
-       char *newObj = (char*)malloc(strlen(iStr)+strlen(str));
-       strcpy(newObj, str);
-       strcat(newObj, iStr);
-       return newObj;
-   }
+char *string::operator+ (const char* iStr)
+{
+    char *newObj = (char*)malloc(strlen(iStr)+strlen(str));
+    strcpy(newObj, str);
+    strcat(newObj, iStr);
+    return newObj;
+}
 #endif
 
 #ifdef PLUS_2
-   char *string::operator+ (const string &newObj)
-   {
-       char *newObject = (char*)malloc(strlen(newObj.str)+strlen(str));
-       strcpy(newObject, str);
-       strcat(newObject, newObj.str);
-       return newObject;
-   }
+char *string::operator+ (const string &newObj)
+{
+    char *newObject = (char*)malloc(strlen(newObj.str)+strlen(str));
+    strcpy(newObject, str);
+    strcat(newObject, newObj.str);
+    return newObject;
+}
 #endif
 
 #ifdef PLUS_EQUALLY_1
-   char *string::operator+= (const char* iStr)
-   {
-       unsigned short lenStr1Str2 = strlen(iStr)+strlen(str);
-       char *newObject = (char*)malloc(lenStr1Str2+1);
-       newObject[lenStr1Str2] = 0;
-       strcpy(newObject, str);
-       if ( str != nullptr )
-       {
-           free(str);
-       }
-       str = newObject;
-       strcat(str, iStr);
-       return str;
-   }
+char *string::operator+= (const char* iStr)
+{
+    unsigned short lenStr1Str2 = strlen(iStr)+strlen(str);
+    char *newObject = (char*)malloc(lenStr1Str2+1);
+    newObject[lenStr1Str2] = 0;
+    strcpy(newObject, str);
+    if ( str != nullptr )
+    {
+        free(str);
+    }
+    str = newObject;
+    strcat(str, iStr);
+    return str;
+}
 #endif
 
 #ifdef PLUS_EQUALLY_2
-   char *string::operator+= (const string &newObj)
-   {
-       unsigned short lenStr1Str2 = strlen(newObj.str)+strlen(str);
-       char *newObject = (char*)malloc(lenStr1Str2+1);
-       newObject[lenStr1Str2] = 0;
-       strcpy(newObject, str);
-       if ( str != nullptr )
-       {
-           free(str);
-       }
-       str = newObject;
-       strcat(str, newObj.str);
-       return str;
-   }
+char *string::operator+= (const string &newObj)
+{
+    unsigned short lenStr1Str2 = strlen(newObj.str)+strlen(str);
+    char *newObject = (char*)malloc(lenStr1Str2+1);
+    newObject[lenStr1Str2] = 0;
+    strcpy(newObject, str);
+    if ( str != nullptr )
+    {
+        free(str);
+    }
+    str = newObject;
+    strcat(str, newObj.str);
+    return str;
+}
 #endif
 
 #ifdef PLUS_EQUALLY_3
-   char *string::operator+= (const char c)
-   {
-           unsigned short lenStr = strlen(str);
-           char *newObject = (char*)malloc(lenStr+2);
-           newObject[lenStr+1] = 0;
-           strcpy(newObject, str);
-           if ( str != nullptr )
-           {
-               free(str);
-           }
-           str = newObject;
-           str[lenStr] = c;
-           return str;
-   }
+char *string::operator+= (const char c)
+{
+    unsigned short lenStr = strlen(str);
+    char *newObject = (char*)malloc(lenStr+2);
+    newObject[lenStr+1] = 0;
+    strcpy(newObject, str);
+    if ( str != nullptr )
+    {
+        free(str);
+    }
+    str = newObject;
+    str[lenStr] = c;
+    return str;
+}
 #endif
 
 //#if 1
@@ -389,33 +402,33 @@ char *reverse(char *str)
 //#endif
 
 #ifdef GET_STR
-   char *string::getStr()
-   {
-       return str;
-   }
+char *string::getStr()
+{
+    return str;
+}
 #endif
 
 #ifdef LENGTH
-   unsigned short string::length()
-   {
-       return strlen(str);
-   }
+unsigned short string::length()
+{
+    return strlen(str);
+}
 #endif
 
 #ifdef CLEAR
-   char* string::clear()
-   {
-       free(str);
-       str = nullptr;
-       return str;
-   }
+char* string::clear()
+{
+    free(str);
+    str = nullptr;
+    return str;
+}
 #endif
 
 #ifdef DESTRUCTOR
-   string::~string()
-   {
-       free(str);
-   }
+string::~string()
+{
+    free(str);
+}
 #endif
 
 }

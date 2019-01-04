@@ -5,7 +5,7 @@ project(P005_RCM)
 
 if(${CMAKE_BUILD_TYPE} MATCHES "Release" OR
         ${CMAKE_BUILD_TYPE} MATCHES "MinSizeRe")
-    set (CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} " -s")
+    set (CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} " -s -static")
 endif(${CMAKE_BUILD_TYPE} MATCHES "Release" OR
     ${CMAKE_BUILD_TYPE} MATCHES "MinSizeRe")
 

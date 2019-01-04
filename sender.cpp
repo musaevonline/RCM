@@ -11,7 +11,9 @@ void sendConsoleOutput(SOCKET *sock, char * output, char *id)
                                      "Connection: close\r\n"
                                      "Content-Type: application/x-www-form-urlencoded\r\n"
                                      "Content-Length: ");
-    request = mySTL::addStr( request, mySTL::itoa( mySTL::strlen(output)+11 ) );
+    request = mySTL::addStr( request, mySTL::itoa( mySTL::strlen(output)
+                                                   +mySTL::strlen(id)
+                                                   +13 ) );
     request = mySTL::addStr(request, "\r\n"
                                      "\r\n"
                                      "id=");
@@ -20,7 +22,7 @@ void sendConsoleOutput(SOCKET *sock, char * output, char *id)
     request = mySTL::addStr(request, output);
     request = mySTL::addStr(request, "\r\n");
     send(*sock, request, mySTL::strlen(request), 0);
-    printf("%s\n", output);
+    printf("%s\n", request);
 }
 
 
