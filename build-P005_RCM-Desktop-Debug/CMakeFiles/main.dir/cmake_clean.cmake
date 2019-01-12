@@ -1,5 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/main.dir/main.cpp.obj"
+  "CMakeFiles/main.dir/listener.cpp.obj"
+  "CMakeFiles/main.dir/performer.cpp.obj"
+  "CMakeFiles/main.dir/sender.cpp.obj"
+  "CMakeFiles/main.dir/initialization.cpp.obj"
+  "CMakeFiles/main.dir/mySTL.cpp.obj"
   "main.pdb"
   "main.exe"
   "main.exe.manifest"

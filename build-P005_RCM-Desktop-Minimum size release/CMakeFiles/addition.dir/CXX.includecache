@@ -11,6 +11,8 @@ stdio.h
 -
 windows.h
 -
+time.h
+-
 mySTL.h
 D:/Documents/CPlusPlus/P005_RCM/mySTL.h
 

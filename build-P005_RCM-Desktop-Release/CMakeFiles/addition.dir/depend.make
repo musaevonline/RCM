@@ -3,17 +3,33 @@
 
 CMakeFiles/addition.dir/initialization.cpp.obj: ../addition.h
 CMakeFiles/addition.dir/initialization.cpp.obj: ../initialization.cpp
+CMakeFiles/addition.dir/initialization.cpp.obj: ../initialization.h
+CMakeFiles/addition.dir/initialization.cpp.obj: ../listener.h
 CMakeFiles/addition.dir/initialization.cpp.obj: ../mySTL.h
+CMakeFiles/addition.dir/initialization.cpp.obj: ../performer.h
+CMakeFiles/addition.dir/initialization.cpp.obj: ../sender.h
 
 CMakeFiles/addition.dir/listener.cpp.obj: ../addition.h
+CMakeFiles/addition.dir/listener.cpp.obj: ../initialization.h
 CMakeFiles/addition.dir/listener.cpp.obj: ../listener.cpp
+CMakeFiles/addition.dir/listener.cpp.obj: ../listener.h
 CMakeFiles/addition.dir/listener.cpp.obj: ../mySTL.h
+CMakeFiles/addition.dir/listener.cpp.obj: ../performer.h
+CMakeFiles/addition.dir/listener.cpp.obj: ../sender.h
 
 CMakeFiles/addition.dir/performer.cpp.obj: ../addition.h
+CMakeFiles/addition.dir/performer.cpp.obj: ../initialization.h
+CMakeFiles/addition.dir/performer.cpp.obj: ../listener.h
 CMakeFiles/addition.dir/performer.cpp.obj: ../mySTL.h
 CMakeFiles/addition.dir/performer.cpp.obj: ../performer.cpp
+CMakeFiles/addition.dir/performer.cpp.obj: ../performer.h
+CMakeFiles/addition.dir/performer.cpp.obj: ../sender.h
 
 CMakeFiles/addition.dir/sender.cpp.obj: ../addition.h
+CMakeFiles/addition.dir/sender.cpp.obj: ../initialization.h
+CMakeFiles/addition.dir/sender.cpp.obj: ../listener.h
 CMakeFiles/addition.dir/sender.cpp.obj: ../mySTL.h
+CMakeFiles/addition.dir/sender.cpp.obj: ../performer.h
 CMakeFiles/addition.dir/sender.cpp.obj: ../sender.cpp
+CMakeFiles/addition.dir/sender.cpp.obj: ../sender.h
 

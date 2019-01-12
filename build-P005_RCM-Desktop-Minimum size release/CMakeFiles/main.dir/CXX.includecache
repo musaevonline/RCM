@@ -11,12 +11,16 @@ stdio.h
 -
 windows.h
 -
+time.h
+-
 mySTL.h
 D:/Documents/CPlusPlus/P005_RCM/mySTL.h
 
 D:/Documents/CPlusPlus/P005_RCM/main.cpp
 addition.h
 D:/Documents/CPlusPlus/P005_RCM/addition.h
+string.h
+-
 
 D:/Documents/CPlusPlus/P005_RCM/mySTL.h
 

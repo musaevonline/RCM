@@ -69,21 +69,94 @@ CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\CPlusPlus\P005_RCM\main.cpp -o CMakeFiles\main.dir\main.cpp.s
 
+CMakeFiles/main.dir/listener.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/listener.cpp.obj: ../listener.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\CPlusPlus\P005_RCM\build-P005_RCM-Desktop-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/listener.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\main.dir\listener.cpp.obj -c D:\Documents\CPlusPlus\P005_RCM\listener.cpp
+
+CMakeFiles/main.dir/listener.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/listener.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\CPlusPlus\P005_RCM\listener.cpp > CMakeFiles\main.dir\listener.cpp.i
+
+CMakeFiles/main.dir/listener.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/listener.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\CPlusPlus\P005_RCM\listener.cpp -o CMakeFiles\main.dir\listener.cpp.s
+
+CMakeFiles/main.dir/performer.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/performer.cpp.obj: ../performer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\CPlusPlus\P005_RCM\build-P005_RCM-Desktop-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/performer.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\main.dir\performer.cpp.obj -c D:\Documents\CPlusPlus\P005_RCM\performer.cpp
+
+CMakeFiles/main.dir/performer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/performer.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\CPlusPlus\P005_RCM\performer.cpp > CMakeFiles\main.dir\performer.cpp.i
+
+CMakeFiles/main.dir/performer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/performer.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\CPlusPlus\P005_RCM\performer.cpp -o CMakeFiles\main.dir\performer.cpp.s
+
+CMakeFiles/main.dir/sender.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/sender.cpp.obj: ../sender.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\CPlusPlus\P005_RCM\build-P005_RCM-Desktop-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/sender.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\main.dir\sender.cpp.obj -c D:\Documents\CPlusPlus\P005_RCM\sender.cpp
+
+CMakeFiles/main.dir/sender.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/sender.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\CPlusPlus\P005_RCM\sender.cpp > CMakeFiles\main.dir\sender.cpp.i
+
+CMakeFiles/main.dir/sender.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/sender.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\CPlusPlus\P005_RCM\sender.cpp -o CMakeFiles\main.dir\sender.cpp.s
+
+CMakeFiles/main.dir/initialization.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/initialization.cpp.obj: ../initialization.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\CPlusPlus\P005_RCM\build-P005_RCM-Desktop-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/initialization.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\main.dir\initialization.cpp.obj -c D:\Documents\CPlusPlus\P005_RCM\initialization.cpp
+
+CMakeFiles/main.dir/initialization.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/initialization.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\CPlusPlus\P005_RCM\initialization.cpp > CMakeFiles\main.dir\initialization.cpp.i
+
+CMakeFiles/main.dir/initialization.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/initialization.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\CPlusPlus\P005_RCM\initialization.cpp -o CMakeFiles\main.dir\initialization.cpp.s
+
+CMakeFiles/main.dir/mySTL.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/mySTL.cpp.obj: ../mySTL.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\CPlusPlus\P005_RCM\build-P005_RCM-Desktop-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/mySTL.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\main.dir\mySTL.cpp.obj -c D:\Documents\CPlusPlus\P005_RCM\mySTL.cpp
+
+CMakeFiles/main.dir/mySTL.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/mySTL.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\CPlusPlus\P005_RCM\mySTL.cpp > CMakeFiles\main.dir\mySTL.cpp.i
+
+CMakeFiles/main.dir/mySTL.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/mySTL.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\CPlusPlus\P005_RCM\mySTL.cpp -o CMakeFiles\main.dir\mySTL.cpp.s
+
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/main.cpp.obj"
+"CMakeFiles/main.dir/main.cpp.obj" \
+"CMakeFiles/main.dir/listener.cpp.obj" \
+"CMakeFiles/main.dir/performer.cpp.obj" \
+"CMakeFiles/main.dir/sender.cpp.obj" \
+"CMakeFiles/main.dir/initialization.cpp.obj" \
+"CMakeFiles/main.dir/mySTL.cpp.obj"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
 main.exe: CMakeFiles/main.dir/main.cpp.obj
+main.exe: CMakeFiles/main.dir/listener.cpp.obj
+main.exe: CMakeFiles/main.dir/performer.cpp.obj
+main.exe: CMakeFiles/main.dir/sender.cpp.obj
+main.exe: CMakeFiles/main.dir/initialization.cpp.obj
+main.exe: CMakeFiles/main.dir/mySTL.cpp.obj
 main.exe: CMakeFiles/main.dir/build.make
-main.exe: libaddition.a
-main.exe: libmySTL.a
 main.exe: CMakeFiles/main.dir/linklibs.rsp
 main.exe: CMakeFiles/main.dir/objects1.rsp
 main.exe: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Documents\CPlusPlus\P005_RCM\build-P005_RCM-Desktop-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Documents\CPlusPlus\P005_RCM\build-P005_RCM-Desktop-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable main.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\main.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

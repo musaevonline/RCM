@@ -14,6 +14,8 @@
 #define ADD_CHAR
 #define ADD_STR
 #define EXTRACT_MSG
+#define ITOA
+#define REVERSE
 #define CONSTRUCTOR_1
 #define CONSTRUCTOR_2
 #define CONSTRUCTOR_3
@@ -29,29 +31,52 @@
 #define LENGTH
 #define CLEAR
 #define DESTRUCTOR
-#define ITOA
-#define REVERSE
 
 #endif
 
 #endif // MYSTL_H
 
-
 namespace mySTL
 {
+#ifdef STRLEN
 unsigned short strlen(const char *str);
+#endif
+#ifdef STRCMP_1
 bool strcmp(const char *str1, const char *str2);
+#endif
+#ifdef STRCMP_2
 bool strcmp(const char *str1, const char *str2, unsigned short len);
+#endif
+#ifdef STRCPY_1
 char *strcpy(char *str1, const char *str2);
+#endif
+#ifdef STRCPY_2
 char *strcpy(char *str1, const char *str2, unsigned short lenStr1);
+#endif
+#ifdef STRCAT_1
 char *strcat(char *str1, const char *str2);
+#endif
+#ifdef STRCAT_2
 char *strcat(char *str1, const char *str2, unsigned short lenStr1);
+#endif
+#ifdef STRCAT_3
 char *strcat(char *str1, const char *str2, unsigned short lenStr1, unsigned short lenStr2);
+#endif
+#ifdef ADD_CHAR
 char *addCh(char *str, const char ch);
+#endif
+#ifdef ADD_STR
 char *addStr (char* str , const char* iStr);
+#endif
+#ifdef EXTRACT_MSG
 char *extractMsg(char c, char *filter);
+#endif
+#ifdef ITOA
 char *itoa(int i);
+#endif
+#ifdef REVERSE
 char *reverse(char *str);
+#endif
 class string
 {
 public:

@@ -20,8 +20,8 @@ unsigned short strlen(const char *str)
 #ifdef STRCMP_1
 bool strcmp (const char *str1, const char *str2)
 {
-    unsigned int lenStr1 = mySTL::strlen(str1);
-    unsigned int lenStr2 = mySTL::strlen(str2);
+    unsigned int lenStr1 = strlen(str1);
+    unsigned int lenStr2 = strlen(str2);
     int i = 0;
     if (lenStr1 > 0 && lenStr2 > 0)
     {
@@ -61,7 +61,7 @@ bool strcmp(const char *str1, const char *str2, unsigned short len)
 #ifdef STRCPY_1
 char *strcpy(char *str1, const char *str2)
 {
-    unsigned short lenStr2 = mySTL::strlen(str2);
+    unsigned short lenStr2 = strlen(str2);
     for ( unsigned short i = 0; i < lenStr2; i++ )
         str1[i]=str2[i];
     str1[lenStr2] = 0;
@@ -84,7 +84,7 @@ char *strcpy(char *str1, const char *str2, unsigned short lenStr2)
 char *strcat(char *str1, const char *str2)
 {
     unsigned short i = 0;
-    unsigned short lenStr1 = mySTL::strlen(str1);
+    unsigned short lenStr1 = strlen(str1);
     while ( str2[i] != 0 )
     {
         str1[i + lenStr1] = str2[i];
@@ -126,13 +126,33 @@ char *strcat(char *str1, const char *str2, unsigned short lenStr1, unsigned shor
 #ifdef ADD_CHAR
 char *addCh(char *str, const char ch)
 {
-    unsigned short lenStr = mySTL::strlen(str);
-    char *new_str = (char*)malloc(lenStr+2);
-    mySTL::strcpy(new_str, str);
-    if ( str != nullptr )
+    char *new_str;
+    unsigned short lenStr;
+    if (str != nullptr)
     {
-        free(str);
+        lenStr = strlen(str);
     }
+    else
+    {
+        lenStr = 0;
+    }
+    new_str = (char*)malloc(lenStr+2);
+    if (new_str == nullptr)
+    {
+        return nullptr;
+    }
+        if (str != nullptr)
+        {
+            strcpy(new_str, str);
+        }
+        else
+        {
+            new_str[0] = 0;
+        }
+        if ( str != nullptr )
+        {
+            free(str);
+        }
     str = new_str;
     str[lenStr] = ch;
     str[lenStr+1] = 0;
@@ -143,15 +163,33 @@ char *addCh(char *str, const char ch)
 #ifdef ADD_STR
 char *addStr (char* str , const char* iStr)
 {
-    unsigned short lenStr1Str2 = mySTL::strlen(iStr)+mySTL::strlen(str);
-    char *newObject = (char*)malloc(lenStr1Str2+1);
-    mySTL::strcpy(newObject, str);
+    char *new_str;
+    unsigned short lenStr1Str2;
+
+    if (iStr != nullptr)
+    {
+        lenStr1Str2 = strlen(iStr);
+    }
+    if (str != nullptr)
+    {
+        lenStr1Str2 += strlen(str);
+    }
+
+    new_str = (char*)malloc(lenStr1Str2+1);
+    if (str != nullptr)
+    {
+        strcpy(new_str, str);
+    }
+    else
+    {
+        new_str[0] = 0;
+    }
     if ( str != nullptr )
     {
         free(str);
     }
-    str=newObject;
-    mySTL::strcat(str, iStr);
+    str=new_str;
+    strcat(str, iStr);
     return str;
 }
 #endif
@@ -217,7 +255,7 @@ char *itoa(int i)
 char *reverse(char *str)
 {
     unsigned short temp;
-    unsigned int lenStr = mySTL::strlen(str);
+    unsigned int lenStr = strlen(str);
     for (int i = 0; i < lenStr/2; i++)
     {
         temp = str[i];

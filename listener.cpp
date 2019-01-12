@@ -1,12 +1,11 @@
 #include "addition.h"
-
+unsigned long timeOut = time(NULL);
 char *listenData(void *sock)
 {
     //printf("listenData\n");
     static fd_set fd;
-    static int timeOut = 0;
     int x=0;
-    char *str = new char[SIZE_PIECE_OUTPUT+1];
+    char *str = (char*)malloc(SIZE_PIECE_OUTPUT+1);
     ZeroMemory(str, SIZE_PIECE_OUTPUT+1);
     static timeval tv;
     tv.tv_sec = 0;
@@ -17,21 +16,21 @@ char *listenData(void *sock)
     //printf("FD_ISSET: %d\n",FD_ISSET(*(SOCKET*)sock, &fd));
     if ( FD_ISSET(*(SOCKET*)sock, &fd) )
     {
-        timeOut = 0;
+        timeOut = time(NULL);
         if ( (x=recv(*(SOCKET*)sock, str, SIZE_PIECE_OUTPUT, 0)) == -1 || x == 0 )
         {
            // printf("%d", x);
-            return "";
+            return nullptr;
         }
         //printf("%s", str);
         return str;
     }
-    timeOut++;
-    if ( 0 )
+    if ( time(NULL) - timeOut > 5 )
     {
         printf("%s", "timeout!\n");
-        timeOut = 0;
-        return "";
+        timeOut = time(NULL);
+        return nullptr;
     }
-    return 0;
+    strcpy(str, "");
+    return str;
 }

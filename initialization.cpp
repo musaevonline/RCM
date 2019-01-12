@@ -14,7 +14,7 @@ sockaddr_in *initPreConnection()
     while ( (s = gethostbyname("gc9515.000webhostapp.com")) == nullptr )
     {
         printf("Error connect: %d\n", WSAGetLastError());
-        Sleep(LOOP_TIME_WAIT);
+        Sleep(RECONNECTION_TIME_WAIT);
     }
     printf("%s\n", inet_ntoa(*(in_addr*)s->h_addr_list[0]));
     addr_a = inet_ntoa(*(in_addr*)s->h_addr_list[0]);
@@ -46,14 +46,21 @@ SOCKET *initConnection(sockaddr_in *addr)
 
 char *readHeader(SOCKET *sock)
 {
-    char *str;
+    unsigned long timeOut = time(NULL);
+    unsigned int lenStr;
+    char *str = nullptr;
     while (true)
     {
-        str = listenData(sock);
-        unsigned int lenStr = mySTL::strlen(str);
         if (str != nullptr)
         {
-            for (int i = 0; i < lenStr-4; i++)
+            free(str);
+        }
+        str = listenData(sock);
+        if (str != nullptr)
+        {
+            printf("%s", str);
+            lenStr = strlen(str);
+            for (int i = 0; i < lenStr; i++)
             {
                 if ( str[i] == '\r'
                      && str[i+1] == '\n'
@@ -64,5 +71,12 @@ char *readHeader(SOCKET *sock)
                 }
             }
         }
+        if ( time(NULL) - timeOut > 5 )
+        {
+            printf("%s", "timeout!\n");
+            timeOut = time(NULL);
+            return nullptr;
+        }
+        Sleep(LOOP_TIME_WAIT);
     }
 }

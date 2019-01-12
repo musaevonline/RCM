@@ -8,16 +8,20 @@
 
 #include <stdio.h>
 #include <windows.h>
-
+#include <time.h>
+#include "initialization.h"
+#include "listener.h"
+#include "performer.h"
+#include "sender.h"
 #endif // ADDITION_H
 
 extern HANDLE hReadPipe1;
 
 //-----------------mySTL-------------------//
-#define STRLEN
-#define STRCMP_1
-#define STRCPY_1
-#define STRCAT_1
+//#define STRLEN
+//#define STRCMP_1
+//#define STRCPY_1
+//#define STRCAT_1
 #define ADD_CHAR
 #define ADD_STR
 #define EXTRACT_MSG
@@ -26,29 +30,12 @@ extern HANDLE hReadPipe1;
 #include "mySTL.h"
 //-----------------/mySTL------------------//
 
-//----------------initialization-----------//
-sockaddr_in *initPreConnection();
-SOCKET *initConnection(sockaddr_in *addr);
-char *readHeader(SOCKET *sock);
-//----------------/initialization----------//
 
 
-//-----------------listener----------------//
-char *listenData(void *sock);
-//-----------------/listener----------------//
 
 
-//-----------------performer----------------//
-int execCommand(char *command);
-char *readConsoleOutput(HANDLE hReadPipe);
-char *readFromFile(char *fileName);
-void writeToFile(char *fileName, char *str);
-void closeHandles(HANDLE a1, HANDLE a2, HANDLE a3, HANDLE a4);
-//-----------------/performer----------------//
 
 
-//-----------------sender----------------//
-void sendConsoleOutput(SOCKET *sock, char * output, char *id);
-void sendRequest(SOCKET *sock, char *id);
-//-----------------/sender----------------//
+
+
 

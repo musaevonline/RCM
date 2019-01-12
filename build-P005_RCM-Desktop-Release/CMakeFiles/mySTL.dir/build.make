@@ -59,15 +59,15 @@ include CMakeFiles/mySTL.dir/flags.make
 CMakeFiles/mySTL.dir/mySTL.cpp.obj: CMakeFiles/mySTL.dir/flags.make
 CMakeFiles/mySTL.dir/mySTL.cpp.obj: ../mySTL.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\CPlusPlus\P005_RCM\build-P005_RCM-Desktop-Release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mySTL.dir/mySTL.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\mySTL.dir\mySTL.cpp.obj -c D:\Documents\CPlusPlus\P005_RCM\mySTL.cpp
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\mySTL.dir\mySTL.cpp.obj -c D:\Documents\CPlusPlus\P005_RCM\mySTL.cpp
 
 CMakeFiles/mySTL.dir/mySTL.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mySTL.dir/mySTL.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\CPlusPlus\P005_RCM\mySTL.cpp > CMakeFiles\mySTL.dir\mySTL.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\CPlusPlus\P005_RCM\mySTL.cpp > CMakeFiles\mySTL.dir\mySTL.cpp.i
 
 CMakeFiles/mySTL.dir/mySTL.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mySTL.dir/mySTL.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\CPlusPlus\P005_RCM\mySTL.cpp -o CMakeFiles\mySTL.dir\mySTL.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\CPlusPlus\P005_RCM\mySTL.cpp -o CMakeFiles\mySTL.dir\mySTL.cpp.s
 
 # Object files for target mySTL
 mySTL_OBJECTS = \

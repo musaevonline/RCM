@@ -11,7 +11,7 @@ int execCommand(char *command)
     static SECURITY_ATTRIBUTES sa;
     unsigned long NumberWritten;
 
-    if ( mySTL::strcmp(command, "&start") )
+    if ( !strcmp(command, "&start") )
     {
         if ( start != true )
         {
@@ -27,15 +27,16 @@ int execCommand(char *command)
             GetStartupInfo( &StartInfo );
             StartInfo.cb = sizeof(StartInfo);
             StartInfo.dwFlags = STARTF_USESHOWWINDOW | STARTF_USESTDHANDLES;
-            StartInfo.wShowWindow = SW_HIDE;
+            StartInfo.wShowWindow = SW_NORMAL;
             StartInfo.hStdInput = hReadPipe2;
             StartInfo.hStdOutput = StartInfo.hStdError = hWritePipe1;
             ZeroMemory(&ProcInfo, sizeof(ProcInfo));
+
             if ( !CreateProcess(nullptr,
                               "cmd",
                               nullptr,
                               nullptr,
-                              true, 0,
+                              true, CREATE_NEW_CONSOLE,
                               nullptr,
                               nullptr,
                               &StartInfo,
@@ -53,17 +54,17 @@ int execCommand(char *command)
     {
         if ( start == true )
         {
-            if ( mySTL::strcmp(command, "&quit") )
+            if ( !strcmp(command, "&quit") )
             {
                 closeHandles(hWritePipe1, hWritePipe2, hReadPipe1, hReadPipe2);
                 TerminateProcess(ProcInfo.hProcess, 0);
                 start = false;
             }
-            unsigned short commandLen = mySTL::strlen(command);
+            unsigned short commandLen = strlen(command);
             char* modCommand = (char*)malloc(commandLen + 3);
             modCommand[commandLen+2] = 0;
-            mySTL::strcpy(modCommand, command);
-            mySTL::strcat(modCommand, "\r\n");
+            strcpy(modCommand, command);
+            strcat(modCommand, "\r\n");
             WriteFile(hWritePipe2, modCommand,
                       (commandLen+2), &NumberWritten, nullptr);
             free(modCommand);
@@ -122,7 +123,7 @@ void writeToFile(char *fileName, char *str)
 {
     DWORD NumberWritten;
     HANDLE file = CreateFile(fileName, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
-    WriteFile(file, str, mySTL::strlen(str), &NumberWritten, NULL);
+    WriteFile(file, str, strlen(str), &NumberWritten, NULL);
     CloseHandle(file);
 }
 
