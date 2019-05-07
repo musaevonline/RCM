@@ -195,45 +195,53 @@ char *addStr (char* str , const char* iStr)
 #endif
 
 #ifdef EXTRACT_MSG
-char *extractMsg(char c, char *filter)
+extractMsgIdentifier *extractMsg(char c, char *filter, extractMsgIdentifier *identifier)
 {
-    static int i = 0;
-    static int u = 0;
-    static char *msg = nullptr;
-    static bool isMsg = false;
-
-    if ( filter[i] == '$' && isMsg == false)
+//    static int i = 0;
+//    static int u = 0;
+//    static char *msg = nullptr;
+//    static bool isMsg = false;
+    if (identifier == nullptr)
     {
-        u = i+1;
-        isMsg = true;
-        free(msg);
-        msg = nullptr;
+        identifier = (extractMsgIdentifier*)malloc(sizeof(extractMsgIdentifier));
+        identifier->i = 0;
+        identifier->u = 0;
+        identifier->msg = nullptr;
+        identifier->tempMsg = nullptr;
+        identifier->isMsg = false;
+    }
+    if ( filter[(*identifier).i] == '$' && identifier->isMsg == false)
+    {
+        identifier->u = identifier->i+1;
+        identifier->isMsg = true;
     }
 
 
-    if ( filter[i] == c )
+    if ( filter[identifier->i] == c )
     {
-        i++;
-        if ( filter[i] == 0 )
+        identifier->i++;
+        if ( filter[identifier->i] == 0 )
         {
-            i = 0;
-            u = 0;
-            isMsg = false;
-            return msg;
+            (*identifier).i = 0;
+            (*identifier).u = 0;
+            (*identifier).isMsg = false;
+            identifier->msg = identifier->tempMsg;
+            identifier->tempMsg = nullptr;
+            return identifier;
         }
     }
     else
     {
-        i = u;
+        identifier->i = identifier->u;
     }
 
 
-    if ( isMsg == true )
+    if ( identifier->isMsg == true )
     {
-        msg = mySTL::addCh(msg, c);
+        identifier->tempMsg = mySTL::addCh(identifier->tempMsg, c);
     }
 
-    return nullptr;
+    return identifier;
 }
 #endif
 

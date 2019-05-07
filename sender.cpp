@@ -4,7 +4,7 @@
 void sendConsoleOutput(SOCKET *sock, char * output, char *id)
 {
     // printf("sendConsoleOutput\n");
-
+    OemToChar(output, output);
     char *request = nullptr;
     request = mySTL::addStr(request, "POST / HTTP/1.1\r\n"
                                      "Host: gc9515.000webhostapp.com\r\n"

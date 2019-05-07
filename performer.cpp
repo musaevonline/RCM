@@ -26,17 +26,17 @@ int execCommand(char *command)
             ZeroMemory(&StartInfo, sizeof(StartInfo));
             GetStartupInfo( &StartInfo );
             StartInfo.cb = sizeof(StartInfo);
-            StartInfo.dwFlags = STARTF_USESHOWWINDOW | STARTF_USESTDHANDLES;
-            StartInfo.wShowWindow = SW_NORMAL;
+            StartInfo.dwFlags = STARTF_USESTDHANDLES | STARTF_USESHOWWINDOW;
             StartInfo.hStdInput = hReadPipe2;
             StartInfo.hStdOutput = StartInfo.hStdError = hWritePipe1;
+            StartInfo.wShowWindow = SW_HIDE;
             ZeroMemory(&ProcInfo, sizeof(ProcInfo));
 
             if ( !CreateProcess(nullptr,
                               "cmd",
                               nullptr,
                               nullptr,
-                              true, CREATE_NEW_CONSOLE,
+                              true, 0,
                               nullptr,
                               nullptr,
                               &StartInfo,
@@ -104,7 +104,14 @@ char *readFromFile(char *fileName)
     char *buff = nullptr;
     char c;
     DWORD NumberRead;
-    HANDLE file = CreateFile(fileName, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    HANDLE file;
+    if ((file = CreateFile(fileName, GENERIC_READ,
+                          0, NULL, OPEN_EXISTING,
+                          FILE_ATTRIBUTE_NORMAL,
+                           NULL)) == INVALID_HANDLE_VALUE)
+    {
+        return nullptr;
+    }
     do{
         if ( ReadFile(file, &c, 1, &NumberRead, NULL) == 0 )
         {

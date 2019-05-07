@@ -36,6 +36,15 @@
 
 #endif // MYSTL_H
 
+struct extractMsgIdentifier
+{
+    int i = 0;
+    int u = 0;
+    char *msg = nullptr;
+    char *tempMsg = nullptr;
+    bool isMsg = false;
+};
+
 namespace mySTL
 {
 #ifdef STRLEN
@@ -69,7 +78,7 @@ char *addCh(char *str, const char ch);
 char *addStr (char* str , const char* iStr);
 #endif
 #ifdef EXTRACT_MSG
-char *extractMsg(char c, char *filter);
+extractMsgIdentifier *extractMsg(char c, char *filter, extractMsgIdentifier *identifier);
 #endif
 #ifdef ITOA
 char *itoa(int i);

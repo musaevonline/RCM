@@ -110,19 +110,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named addition
-
-# Build rule for target.
-addition: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 addition
-.PHONY : addition
-
-# fast build rule for target.
-addition/fast:
-	$(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/build
-.PHONY : addition/fast
-
-#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -135,26 +122,13 @@ main/fast:
 	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-#=============================================================================
-# Target rules for targets named mySTL
-
-# Build rule for target.
-mySTL: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 mySTL
-.PHONY : mySTL
-
-# fast build rule for target.
-mySTL/fast:
-	$(MAKE) -f CMakeFiles\mySTL.dir\build.make CMakeFiles/mySTL.dir/build
-.PHONY : mySTL/fast
-
 initialization.obj: initialization.cpp.obj
 
 .PHONY : initialization.obj
 
 # target to build an object file
 initialization.cpp.obj:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/initialization.cpp.obj
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/initialization.cpp.obj
 .PHONY : initialization.cpp.obj
 
 initialization.i: initialization.cpp.i
@@ -163,7 +137,7 @@ initialization.i: initialization.cpp.i
 
 # target to preprocess a source file
 initialization.cpp.i:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/initialization.cpp.i
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/initialization.cpp.i
 .PHONY : initialization.cpp.i
 
 initialization.s: initialization.cpp.s
@@ -172,7 +146,7 @@ initialization.s: initialization.cpp.s
 
 # target to generate assembly for a file
 initialization.cpp.s:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/initialization.cpp.s
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/initialization.cpp.s
 .PHONY : initialization.cpp.s
 
 listener.obj: listener.cpp.obj
@@ -181,7 +155,7 @@ listener.obj: listener.cpp.obj
 
 # target to build an object file
 listener.cpp.obj:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/listener.cpp.obj
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/listener.cpp.obj
 .PHONY : listener.cpp.obj
 
 listener.i: listener.cpp.i
@@ -190,7 +164,7 @@ listener.i: listener.cpp.i
 
 # target to preprocess a source file
 listener.cpp.i:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/listener.cpp.i
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/listener.cpp.i
 .PHONY : listener.cpp.i
 
 listener.s: listener.cpp.s
@@ -199,7 +173,7 @@ listener.s: listener.cpp.s
 
 # target to generate assembly for a file
 listener.cpp.s:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/listener.cpp.s
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/listener.cpp.s
 .PHONY : listener.cpp.s
 
 main.obj: main.cpp.obj
@@ -235,7 +209,7 @@ mySTL.obj: mySTL.cpp.obj
 
 # target to build an object file
 mySTL.cpp.obj:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\mySTL.dir\build.make CMakeFiles/mySTL.dir/mySTL.cpp.obj
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/mySTL.cpp.obj
 .PHONY : mySTL.cpp.obj
 
 mySTL.i: mySTL.cpp.i
@@ -244,7 +218,7 @@ mySTL.i: mySTL.cpp.i
 
 # target to preprocess a source file
 mySTL.cpp.i:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\mySTL.dir\build.make CMakeFiles/mySTL.dir/mySTL.cpp.i
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/mySTL.cpp.i
 .PHONY : mySTL.cpp.i
 
 mySTL.s: mySTL.cpp.s
@@ -253,7 +227,7 @@ mySTL.s: mySTL.cpp.s
 
 # target to generate assembly for a file
 mySTL.cpp.s:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\mySTL.dir\build.make CMakeFiles/mySTL.dir/mySTL.cpp.s
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/mySTL.cpp.s
 .PHONY : mySTL.cpp.s
 
 performer.obj: performer.cpp.obj
@@ -262,7 +236,7 @@ performer.obj: performer.cpp.obj
 
 # target to build an object file
 performer.cpp.obj:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/performer.cpp.obj
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/performer.cpp.obj
 .PHONY : performer.cpp.obj
 
 performer.i: performer.cpp.i
@@ -271,7 +245,7 @@ performer.i: performer.cpp.i
 
 # target to preprocess a source file
 performer.cpp.i:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/performer.cpp.i
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/performer.cpp.i
 .PHONY : performer.cpp.i
 
 performer.s: performer.cpp.s
@@ -280,7 +254,7 @@ performer.s: performer.cpp.s
 
 # target to generate assembly for a file
 performer.cpp.s:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/performer.cpp.s
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/performer.cpp.s
 .PHONY : performer.cpp.s
 
 sender.obj: sender.cpp.obj
@@ -289,7 +263,7 @@ sender.obj: sender.cpp.obj
 
 # target to build an object file
 sender.cpp.obj:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/sender.cpp.obj
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/sender.cpp.obj
 .PHONY : sender.cpp.obj
 
 sender.i: sender.cpp.i
@@ -298,7 +272,7 @@ sender.i: sender.cpp.i
 
 # target to preprocess a source file
 sender.cpp.i:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/sender.cpp.i
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/sender.cpp.i
 .PHONY : sender.cpp.i
 
 sender.s: sender.cpp.s
@@ -307,7 +281,7 @@ sender.s: sender.cpp.s
 
 # target to generate assembly for a file
 sender.cpp.s:
-	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\addition.dir\build.make CMakeFiles/addition.dir/sender.cpp.s
+	cd /d D:\DOCUME~1\CPLUSP~1\P005_RCM\BUILD-~3 && $(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/sender.cpp.s
 .PHONY : sender.cpp.s
 
 # Help Target
@@ -316,10 +290,8 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... addition
 	@echo ... edit_cache
 	@echo ... main
-	@echo ... mySTL
 	@echo ... rebuild_cache
 	@echo ... initialization.obj
 	@echo ... initialization.i
